@@ -18,17 +18,17 @@ class Main extends Component {
     if(this.props.dataLoaded) {
         return (
           <div className="Main">
-            <div className="container-fluid mt-5" style={{ color: "#55FF55", "backgroundColor": "#1D1D1D" }}>
+            <div className="container-fluid mt-5" style={{ color: "#55FF55", "backgroundColor": "#FFFFFF" }}>
   
             <br></br>
             <div>
               <ReactTypingEffect
                 text={[
-                  "Welcome to NFT Digital Art - X",
-                  "Presented by Dapp University 🎓",
-                  "Look around and choose the NFT you like",
-                  'Click "Buy" to get UNIQUE 💎 NFT',
-                  "Hurry up before all NFTs are sold out!"
+                  "Welcome to BrewMaster",
+                  "Presented by BrewMaster ",
+                  "Look around and choose your favorite beer",
+                  'Click "Buy" to get UNIQUE 💎 Beer',
+                  "Hurry up before all Beers are sold out!"
                 ]}
                 speed='40'
                 eraseSpeed='10'
@@ -52,7 +52,7 @@ class Main extends Component {
               />
               </div>
               <br></br>&nbsp;
-              <img src={'https://i.gyazo.com/ed6df2ee521e82ae2498da1af3454c52.png'} style={{ width: '1000px', height: '300px' }} alt="adam"/>
+              <img src={'https://i.ibb.co/m6F8Gbq/tumblr-nwkubx-Xwc-R1rl2v1do1-1280-removebg-preview.png'} style={{ height: '300px' }} alt="adam"/>
               <div className="row">
                 <main role="main" className="col-lg-12 d-flex text-center">
                   <div className="content mr-auto ml-auto">

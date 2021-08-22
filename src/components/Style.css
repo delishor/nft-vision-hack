@@ -23,12 +23,12 @@
   width: 150px;
   height: 43px;
   color: #55FF55;
-  background-color: #707070;
+  background-color: #FFFFFF;
   border: 1mm ridge #55FF55;
 }
 
 .bgDark7 {
-  background-color: #1D1D1D;
+  background-color: #FFFFFF;
 }
 
 .navBorderBottom{
@@ -37,7 +37,7 @@
 
 .loading{
   height: 1440px;
-  background-color: #1D1D1D;
+  background-color: #FFFFFF;
 }
 
 p {

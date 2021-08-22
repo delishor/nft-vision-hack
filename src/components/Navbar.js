@@ -13,7 +13,7 @@ import './Style.css';
 class Navbar extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-lg rounded-bottom navBorderBottom" style={{ color: "#55FF55", "backgroundColor": "#1D1D1D" }}>
+      <nav className="navbar navbar-expand-lg rounded-bottom navBorderBottom" style={{ color: "#55FF55", "backgroundColor": "#FFFFFF" }}>
         <a
           className="navbar-brand rounded"
           target="_blank"
@@ -21,7 +21,7 @@ class Navbar extends Component {
           style={{color: "#55FF55", border: "1mm ridge #55FF55" }}
           rel="noopener noreferrer"
         >
-            <b>&nbsp;NFT M@$t3rcl@$$&nbsp;</b>
+            <b>BrewMaster</b>
         </a>
           { this.props.account
           ? <div className="collapse navbar-collapse">
@@ -45,6 +45,7 @@ class Navbar extends Component {
                         ? <b><a
                             style={{ color: "#55FF55" }}
                             href={`https://etherscan.io/address/` + this.props.account}
+                            target="_blank"
                             target="_blank"
                             rel="noopener noreferrer"
                           >
