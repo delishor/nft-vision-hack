@@ -112,7 +112,7 @@ class Main extends Component {
                                   </th>
                                 </tr>
                               : <tr>
-                                  <th className="text-left" style={{color: "#8B8B8B"}}>Price: </th>
+                                  <th className="text-left" style={{color: "#000000"}}>Price: </th>
                                   <th style={{color: "#000000"}}>{nft.price/10**18} ETH</th>
                                 </tr>
                               }
