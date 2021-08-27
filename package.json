@@ -5,6 +5,9 @@
   "author": "dev@dappuniversity.com",
   "homepage": ".",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.15",
     "@openzeppelin/contracts": "3.4.0",
     "@openzeppelin/test-helpers": "0.5.10",
     "@truffle/hdwallet-provider": "^1.4.1",
@@ -48,5 +51,6 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {}
 }

@@ -7,24 +7,21 @@
   width: 125px;
   height: 43px;
   color: #FFFFFF;
-  background-color: #303030;
-  border: 1mm ridge #55FF55;
+  /* background-color: #303030; */
+  /* border: 1mm ridge #55FF55; */
 }
 
 .balance {
-  width: 125px;
+  width: 160px;
   height: 43px;
   color: #FFFFFF;
-  background-color: #505050;
-  border: 1mm ridge #55FF55;
 }
 
 .account {
-  width: 150px;
+  width: 185px;
   height: 43px;
-  color: #55FF55;
-  background-color: #FFFFFF;
-  border: 1mm ridge #55FF55;
+  color: #000;
+  background: #FFFFFF;
 }
 
 .bgDark7 {
@@ -32,7 +29,7 @@
 }
 
 .navBorderBottom{
-  border-bottom: 1mm ridge rgba(85, 255, 85, .8)
+  border-bottom: 1px solid #1f348d;
 }
 
 .loading{
@@ -42,4 +39,90 @@
 
 p {
   margin: 5px
+}
+
+.homelink {
+  color: #FFFFFF !important;
+  font-size: 26px;
+}
+
+.homelink:hover {
+  color: #FFFFFF !important;
+}
+
+.button {
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: #FFFFFF;
+  color: #1f348d;
+  border: 1px solid #1f348d;
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #000;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #000 transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-message {
+  color: #000;
+}
+
+.p-3 {
+  border: 1px solid #e6e4e4;
+  background: #FFFFFF;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: rgb(100 100 111 / 20%) 0px 7px 8px 0px;
+}
+
+.imageLink {
+  display: inline-block;
+  padding: 3px;
+  background-color: #FFFFFF;
+}
+
+.navbar-custom-style {
+  z-index: 1000;
+  color: rgb(255, 255, 255);
+  position: fixed;
+  width: 100%;
+}
+
+.background {
+  background-color: #265f64;
 }

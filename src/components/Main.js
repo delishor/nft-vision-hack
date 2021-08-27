@@ -12,13 +12,15 @@ import {
   metadataLoadedSelector,
   nftStateLoadedSelector
 } from '../store/selectors'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLink } from '@fortawesome/free-solid-svg-icons'
 
 class Main extends Component {
   render() {
     if(this.props.dataLoaded) {
         return (
-          <div className="Main">
-            <div className="container-fluid mt-5" style={{ color: "#55FF55", "backgroundColor": "#FFFFFF" }}>
+          <div className="Main" style={{background: "#265f64"}}>
+            <div className="container-fluid background" style={{ color: "#FFFFFF", paddingTop: "80px" }}>
   
             <br></br>
             <div>
@@ -52,7 +54,7 @@ class Main extends Component {
               />
               </div>
               <br></br>&nbsp;
-              <img src={'https://i.ibb.co/m6F8Gbq/tumblr-nwkubx-Xwc-R1rl2v1do1-1280-removebg-preview.png'} style={{ height: '300px' }} alt="adam"/>
+              {/* <img src={'https://i.ibb.co/m6F8Gbq/tumblr-nwkubx-Xwc-R1rl2v1do1-1280-removebg-preview.png'} style={{ height: '300px' }} alt="adam"/> */}
               <div className="row">
                 <main role="main" className="col-lg-12 d-flex text-center">
                   <div className="content mr-auto ml-auto">
@@ -62,12 +64,12 @@ class Main extends Component {
                       return(
                         <div className="p-3" key={key}>
                         {this.props.nftState[nft.id]
-                          ? <a href={nft.image} target="_blank" rel="noopener noreferrer">
-                              <img src={`data:image/png;base64,${nft.img}`} style={{ border: '1mm ridge #8B8B8B', width: '200px', height: '300px' }} alt="art"/>
+                          ? <a class="imageLink" href={nft.image} target="_blank" rel="noopener noreferrer">
+                              <img src={`data:image/png;base64,${nft.img}`} style={{ width: '200px', height: '300px' }} alt="art"/>
                             </a>
-                          : <a href={nft.image} target="_blank" rel="noopener noreferrer">
+                          : <a class="imageLink" href={nft.image} target="_blank" rel="noopener noreferrer">
                               <img
-                                src={`data:image/png;base64,${nft.img}`} style={{ border: '1mm ridge #55FF55', width: '200px', height: '300px' }} alt="art"
+                                src={`data:image/png;base64,${nft.img}`} style={{ width: '200px', height: '300px' }} alt="art"
                               />
                             </a>
                         }
@@ -75,22 +77,22 @@ class Main extends Component {
                           <table style={{ width: '200px' }}>
                             <thead>
                               <tr>
-                                <th className="text-left" style={{color: "#8B8B8B"}}>ID: </th>
-                                <th style={{color: "#FFFFFF"}}>{nft.id}</th>
+                                <th className="text-left" style={{color: "#000000"}}>ID: </th>
+                                <th style={{color: "#000000"}}>{nft.id}</th>
                               </tr>
                             </thead>
                             <tbody>
                               <tr>
-                                <th className="text-left" style={{color: "#8B8B8B"}}>URI: </th>
+                                <th className="text-left" style={{color: "#000000"}}>URI: </th>
                                 <td>
-                                  <a href={nft.uri} target="_blank" rel="noopener noreferrer" style={{color: "#55FF55"}}>
-                                    link
+                                  <a href={nft.uri} target="_blank" rel="noopener noreferrer" style={{color: "#000000"}}>
+                                  <FontAwesomeIcon icon={faLink} />
                                   </a>
                                 </td>
                               </tr>
                               {this.props.nftState[nft.id]
                               ? <tr>
-                                  <th className="text-left" style={{color: "#8B8B8B"}}>Owner:</th>
+                                  <th className="text-left" style={{color: "#000000"}}>Owner:</th>
                                   <th>
                                     <img
                                       alt="id"
@@ -103,7 +105,7 @@ class Main extends Component {
                                       href={`https://etherscan.io/address/` + this.props.nftState[nft.id]}
                                       target="_blank"
                                       rel="noopener noreferrer"
-                                      style={{color: "#55FF55", "fontWeight": "normal"}}
+                                      style={{color: "#000000", "fontWeight": "normal"}}
                                     >
                                       {this.props.nftState[nft.id].substring(0,8) + '...'}
                                     </a>
@@ -111,7 +113,7 @@ class Main extends Component {
                                 </tr>
                               : <tr>
                                   <th className="text-left" style={{color: "#8B8B8B"}}>Price: </th>
-                                  <th style={{color: "#FFFFFF"}}>{nft.price/10**18} ETH</th>
+                                  <th style={{color: "#000000"}}>{nft.price/10**18} ETH</th>
                                 </tr>
                               }
                             </tbody>
@@ -119,20 +121,20 @@ class Main extends Component {
                             {this.props.nftState[nft.id]
                               ? <button
                                   type="Success"
-                                  className="btn btn-block"
-                                  style={{border: '1px ridge #8B8B8B', color: "#8B8B8B", width: '200px'}}
+                                  className="btn btn-danger"
+                                  style={{width: '200px'}}
                                   onClick={(e) => buyNft(this.props.dispatch, nft.id, nft.price)}
                                   disabled
                                 >
-                                  <b>S o l d</b>
+                                  <b>Sold</b>
                                 </button>
                               : <button
                                   type="Success"
-                                  className="btn btn-block btn-outline"
-                                  style={{border: '1px ridge #55FF55', color: "#55FF55", width: '200px'}}
+                                  className="btn btn-warning"
+                                  style={{width: '200px'}}
                                   onClick={(e) => buyNft(this.props.dispatch, nft.id, nft.price)}
                                 >
-                                  <b>B u y</b>
+                                  <b>Buy</b>
                                 </button>
                             }&nbsp;
                           </div>

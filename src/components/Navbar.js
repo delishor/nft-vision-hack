@@ -9,34 +9,34 @@ import {
   web3Selector
 } from '../store/selectors'
 import './Style.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGlobe, faCoins } from '@fortawesome/free-solid-svg-icons'
 
 class Navbar extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-lg rounded-bottom navBorderBottom" style={{ color: "#55FF55", "backgroundColor": "#FFFFFF" }}>
+      <nav className="navbar navbar-expand-lg rounded-bottom navBorderBottom navbar-custom-style" style={{ color: "#FFFFFF", "backgroundColor": "#000000" }}>
         <a
-          className="navbar-brand rounded"
-          target="_blank"
-          href="https://github.com/xternet/dapp_template_v2"
-          style={{color: "#55FF55", border: "1mm ridge #55FF55" }}
-          rel="noopener noreferrer"
+          className="navbar-brand homelink"
+          href="/"
         >
-            <b>BrewMaster</b>
+            <b>Beers</b>
         </a>
           { this.props.account
           ? <div className="collapse navbar-collapse">
-              <ul className="navbar-nav ml-auto">
-                <div className="container">
-                  <div className="row">
+              <ul className="navbar-nav ml-auto col-md-4">
+                <div>
+                  <div className="row" style={{fontSize: "20px"}}>
                     <div className="rounded network">
                       <li className="nav-item nav-link small">
-                        <b>{this.props.network}</b>
+                      <FontAwesomeIcon icon={faGlobe} />
+                        <b style={{margin: "5px"}}>{this.props.network}</b>
                       </li>
                     </div>
                     <div className="rounded balance">
                       <li className="nav-item nav-link small">
-                        <b>{this.props.balance}</b>
-                        <img src={eth} width='18' height='18' alt="eth" />
+                      <FontAwesomeIcon icon={faCoins} />
+                        <b style={{margin: "5px"}}>{this.props.balance} eth</b>
                       </li>
                     </div>
                     <div className="rounded account">
@@ -53,7 +53,7 @@ class Navbar extends Component {
                           &nbsp;
                           </a></b>
                         : <b><a
-                            style={{color: "#55FF55"}}
+                            style={{color: "#000000"}}
                             href={`https://${this.props.network}.etherscan.io/address/` + this.props.account}
                             target="_blank"
                             rel="noopener noreferrer"
@@ -64,8 +64,9 @@ class Navbar extends Component {
                         <img
                           alt="id"
                           className="id border border-success"
-                          width="20"
-                          height="20"
+                          style = {{marginLeft: "5px"}}
+                          width="30"
+                          height="30"
                           src={`data:image/png;base64,${new Identicon(this.props.account, 30).toString()}`}
                         />
                       </li>
@@ -78,9 +79,7 @@ class Navbar extends Component {
               <ul className="navbar-nav ml-auto">
                 { this.props.web3
                 ? <button
-                    type="Success"
-                    className="btn btn-outline btn-block "
-                    style={{ backgroundColor: "#55FF55", color: "#000000" }}
+                    className="btn btn-warning btn-block button"
                     onClick={async () => {
                       try {
                         await window.ethereum.enable()
@@ -89,7 +88,7 @@ class Navbar extends Component {
                       }
                     }}
                   >
-                    L o g i n
+                    Connect Wallet
                   </button>
                 : <button
                     className="btn btn-warning"
